@@ -186,6 +186,7 @@ const config = [
       'arrow-parens': ['error', 'as-needed'],
       'promise/no-multiple-resolved': 'error',
       'react/jsx-curly-brace-presence': 'off',
+      'react-hooks/set-state-in-effect': 'off',
       'promise/no-promise-in-callback': 'warn',
       'promise/no-callback-in-promise': 'warn',
       'react-compiler/react-compiler': 'error',

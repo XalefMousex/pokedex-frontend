@@ -2,10 +2,15 @@
 
 import { useTranslations } from 'next-intl';
 
-import { useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { useState, useEffect } from 'react';
+import { useForm, useWatch } from 'react-hook-form';
 
-import { useInfinitePaginationPokemonsQuery } from 'graphql/generated';
+import {
+  type PokemonModel,
+  usePokemonByIdQuery,
+  usePokemonByNameQuery,
+  useInfinitePaginationPokemonsQuery,
+} from 'graphql/generated';
 
 import { motion } from 'framer-motion';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -26,11 +31,20 @@ import { type GridPokemonsProps, type GridPokemonsSchemaProps } from './types';
 export const GridPokemons = ({ className, ...props }: GridPokemonsProps) => {
   const t = useTranslations('explorer');
 
-  const { register } = useForm<GridPokemonsSchemaProps>({
+  const [searchedPokemon, setSearchedPokemon] = useState<null | PokemonModel>(
+    null,
+  );
+
+  const { control, register } = useForm<GridPokemonsSchemaProps>({
     defaultValues: {
       search: '',
     },
     resolver: zodResolver(gridPokemonsSchema),
+  });
+
+  const watchedSearch = useWatch({
+    control,
+    name: 'search',
   });
 
   const { loadTeams } = useTeamsStore();
@@ -65,8 +79,27 @@ export const GridPokemons = ({ className, ...props }: GridPokemonsProps) => {
       },
     );
 
+  const { refetch: refetchPokemonById } = usePokemonByIdQuery(
+    {
+      pokemonById: Number.isInteger(Number(watchedSearch))
+        ? Number(watchedSearch)
+        : 1,
+    },
+    { enabled: false },
+  );
+
+  const { refetch: refetchPokemonByName } = usePokemonByNameQuery(
+    {
+      name:
+        typeof watchedSearch === 'string' && watchedSearch
+          ? watchedSearch!
+          : '',
+    },
+    { enabled: false },
+  );
+
   const loadMoreRef = useInfiniteScroll(() => {
-    if (hasNextPage && !isFetchingNextPage) {
+    if (!searchedPokemon && hasNextPage && !isFetchingNextPage) {
       fetchNextPage();
     }
   }, Boolean(hasNextPage));
@@ -74,6 +107,42 @@ export const GridPokemons = ({ className, ...props }: GridPokemonsProps) => {
   const pokemons = data?.pages.flatMap(
     page => page?.paginationPokemons?.results || [],
   );
+
+  const handleFetchSearchedPokemon = async () => {
+    if (Number.isInteger(Number(watchedSearch))) {
+      const { data: dataById } = await refetchPokemonById();
+
+      if (dataById?.pokemonById) {
+        setSearchedPokemon(dataById.pokemonById);
+      }
+
+      if (!dataById?.pokemonById) {
+        setSearchedPokemon(null);
+      }
+
+      return;
+    }
+
+    const { data: dataByName } = await refetchPokemonByName();
+
+    if (dataByName?.pokemonByName) {
+      setSearchedPokemon(dataByName.pokemonByName);
+    }
+
+    if (!dataByName?.pokemonByName) {
+      setSearchedPokemon(null);
+    }
+  };
+
+  useEffect(() => {
+    if (watchedSearch) {
+      handleFetchSearchedPokemon();
+    }
+
+    if (!watchedSearch) {
+      setSearchedPokemon(null);
+    }
+  }, [watchedSearch]);
 
   useEffect(() => {
     loadTeams();
@@ -147,26 +216,43 @@ export const GridPokemons = ({ className, ...props }: GridPokemonsProps) => {
           xl:grid-cols-5
         `}
       >
-        {pokemons?.map((pokemon, index) => (
+        {!searchedPokemon &&
+          pokemons?.map((pokemon, index) => (
+            <PokemonCard
+              image={
+                pokemon.sprites.other.official_artwork.front_default ??
+                pokemon.sprites.front_default ??
+                ''
+              }
+              index={index}
+              id={pokemon.id}
+              key={pokemon.id}
+              pokemon={pokemon}
+              name={pokemon.name}
+              types={pokemon.types.map(({ type }) => type.name)}
+            />
+          ))}
+
+        {searchedPokemon && (
           <PokemonCard
             image={
-              pokemon.sprites.other.official_artwork.front_default ??
-              pokemon.sprites.front_default ??
+              searchedPokemon.sprites.other.official_artwork.front_default ??
+              searchedPokemon.sprites.front_default ??
               ''
             }
-            index={index}
-            id={pokemon.id}
-            key={pokemon.id}
-            pokemon={pokemon}
-            name={pokemon.name}
-            types={pokemon.types.map(({ type }) => type.name)}
+            index={0}
+            id={searchedPokemon.id}
+            key={searchedPokemon.id}
+            pokemon={searchedPokemon}
+            name={searchedPokemon.name}
+            types={searchedPokemon.types.map(({ type }) => type.name)}
           />
-        ))}
+        )}
       </div>
 
       <div className="h-10" ref={loadMoreRef} />
 
-      {isFetchingNextPage && (
+      {!searchedPokemon && isFetchingNextPage && (
         <p className="mb-10 text-center text-neutral-500">{t('loading')}</p>
       )}
     </div>

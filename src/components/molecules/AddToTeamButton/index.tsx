@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { useState } from 'react';
 
 import { Plus, Check } from 'lucide-react';
@@ -20,6 +22,8 @@ import { cn } from 'utils/tailwind/cn';
 import { type AddToTeamButtonProps } from './types';
 
 export const AddToTeamButton = ({ pokemon }: AddToTeamButtonProps) => {
+  const t = useTranslations('pokemon-card');
+
   const { teams, addPokemonToTeam } = useTeamsStore();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -55,15 +59,15 @@ export const AddToTeamButton = ({ pokemon }: AddToTeamButtonProps) => {
         onClick={() => setIsOpen(true)}
       >
         <Plus className="size-4" />
-        Adicionar ao Time
+        {t('button-time')}
       </SimpleButton>
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Adicionar ao Time</DialogTitle>
+            <DialogTitle>{t('dialog-title')}</DialogTitle>
             <DialogDescription>
-              Selecione um time para adicionar {pokemon.name}
+              {t('dialog-description', { name: pokemon.name })}
             </DialogDescription>
           </DialogHeader>
 
@@ -116,8 +120,8 @@ export const AddToTeamButton = ({ pokemon }: AddToTeamButtonProps) => {
                         <h3 className="font-bold">{team.name}</h3>
                         <p className="text-sm text-subtitle">
                           {team.team_pokemons.length}/6 Pokémon
-                          {hasAlready && ' • Já está neste time'}
-                          {isFull && ' • Time completo'}
+                          {hasAlready && ` • ${t('team-already-added')}`}
+                          {isFull && ` • ${t('team-complete')}`}
                         </p>
                       </div>
                       {isAdded && (

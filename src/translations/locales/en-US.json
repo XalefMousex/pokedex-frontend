@@ -32,6 +32,36 @@
     "button": "Compare"
   },
 
+  "teams": {
+    "title": "My Teams",
+    "subtitle": "Create and manage your Pokémon teams with up to 6 members each",
+    "button": "Create Team",
+    "dialog-title": "Create New Team",
+    "dialog-description": "Give your team a name and set the composition rules",
+    "input-placeholder": "Ex: Champions of the League",
+    "input-label": "Team Name",
+    "button-create": "Create Team",
+    "button-cancel": "Cancel",
+    "empty-state": {
+      "title": "No teams created yet",
+      "description": "Create teams to organize your favorite Pokémon and make them easier to access."
+    }
+  },
+
+  "help": {
+    "title": "Coming Soon!",
+    "description": "This page has not been created yet.",
+    "subtitle": "But stay tuned!"
+  },
+
+  "pokemon-card": {
+    "button-time": "Add to team",
+    "dialog-title": "Add to Team",
+    "dialog-description": "Select a team to add {name}",
+    "team-already-added": "Already in this team",
+    "team-complete": "Team full"
+  },
+
   "command": {
     "search": {
       "empty": "No results found.",

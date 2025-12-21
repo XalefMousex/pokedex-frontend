@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { useState, useEffect } from 'react';
 
 import { Users, PlusIcon } from 'lucide-react';
@@ -25,6 +27,8 @@ import { cn } from 'utils/tailwind/cn';
 import { type MyTeamsProps } from './types';
 
 export const MyTeams = ({ className, ...props }: MyTeamsProps) => {
+  const t = useTranslations('teams');
+
   const {
     teams,
     isLoading,
@@ -91,7 +95,7 @@ export const MyTeams = ({ className, ...props }: MyTeamsProps) => {
                 `,
               )}
             >
-              Meus Times
+              {t('title')}
             </h1>
 
             <p
@@ -103,7 +107,7 @@ export const MyTeams = ({ className, ...props }: MyTeamsProps) => {
                 `,
               )}
             >
-              Crie e gerencie seus times de Pokémon com até 6 membros cada
+              {t('subtitle')}
             </p>
           </div>
 
@@ -112,16 +116,14 @@ export const MyTeams = ({ className, ...props }: MyTeamsProps) => {
             onOpenChange={setIsCreateDialogOpen}
           >
             <DialogTrigger asChild>
-              <Button icon={<PlusIcon size={16} />}>Criar Time</Button>
+              <Button icon={<PlusIcon size={16} />}>{t('button')}</Button>
             </DialogTrigger>
 
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>Criar Novo Time</DialogTitle>
+                <DialogTitle>{t('dialog-title')}</DialogTitle>
 
-                <DialogDescription>
-                  Dê um nome ao seu time e configure as regras de composição
-                </DialogDescription>
+                <DialogDescription>{t('dialog-description')}</DialogDescription>
               </DialogHeader>
 
               <div className="mt-2 flex flex-col gap-4">
@@ -132,8 +134,8 @@ export const MyTeams = ({ className, ...props }: MyTeamsProps) => {
                   animate={false}
                   value={newTeamName}
                   labelType="default"
-                  label="Nome do Time"
-                  placeholder="Ex: Campeões da Liga"
+                  label={t('input-label')}
+                  placeholder={t('input-placeholder')}
                   onChange={event => setNewTeamName(event.target.value)}
                 />
               </div>
@@ -143,14 +145,14 @@ export const MyTeams = ({ className, ...props }: MyTeamsProps) => {
                   variant="outline"
                   onClick={() => setIsCreateDialogOpen(false)}
                 >
-                  Cancelar
+                  {t('button-cancel')}
                 </Button>
 
                 <Button
                   onClick={handleCreateTeam}
                   isDisabled={!newTeamName.trim()}
                 >
-                  Criar Time
+                  {t('button-create')}
                 </Button>
               </div>
             </DialogContent>
@@ -179,11 +181,11 @@ export const MyTeams = ({ className, ...props }: MyTeamsProps) => {
 
               <div>
                 <h2 className="mb-2 text-2xl font-bold">
-                  Nenhum time criado ainda
+                  {t('empty-state.title')}
                 </h2>
 
                 <p className="mb-4 text-subtitle">
-                  Crie seu primeiro time e comece a adicionar Pokémon
+                  {t('empty-state.description')}
                 </p>
 
                 <Button

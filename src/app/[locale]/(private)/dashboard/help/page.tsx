@@ -1,24 +1,30 @@
+import { getTranslations } from 'next-intl/server';
+
 import { Telescope } from 'lucide-react';
 
-const Page = async () => (
-  <div className="h-svh">
-    <div
-      className={`
-        m-auto flex size-full flex-col items-center justify-center gap-2
-      `}
-    >
-      <Telescope size={72} />
+const Page = async () => {
+  const t = await getTranslations('help');
 
-      <h1 className="text-4xl leading-tight font-bold text-main">
-        Coming Soon!
-      </h1>
+  return (
+    <div className="h-svh">
+      <div
+        className={`
+          m-auto flex size-full flex-col items-center justify-center gap-2
+        `}
+      >
+        <Telescope size={72} />
 
-      <p className="text-center text-subtitle">
-        This page has not been created yet. <br />
-        Stay tuned though!
-      </p>
+        <h1 className="text-4xl leading-tight font-bold text-main">
+          {t('title')}
+        </h1>
+
+        <p className="text-center text-subtitle">
+          {t('description')} <br />
+          {t('subtitle')}
+        </p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Page;

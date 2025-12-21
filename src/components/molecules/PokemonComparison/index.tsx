@@ -169,7 +169,13 @@ export const PokemonComparison = ({
                           <span className="font-bold text-main">
                             Total Base Stats
                           </span>
-                          <span className="font-bold text-primary-500">gg</span>
+
+                          <span className="font-bold text-primary-500">
+                            {pokemon.stats.reduce(
+                              (sum, stat) => sum + stat.base_stat,
+                              0,
+                            )}
+                          </span>
                         </div>
                       </div>
                     </div>

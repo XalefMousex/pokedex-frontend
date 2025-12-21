@@ -32,6 +32,36 @@
     "button": "Comparar"
   },
 
+  "teams": {
+    "title": "Meus Times",
+    "subtitle": "Crie e gerencie seus times de Pokémon com até 6 membros cada",
+    "button": "Criar Time",
+    "dialog-title": "Criar Novo Time",
+    "dialog-description": "Dê um nome ao seu time e configure as regras de composição",
+    "input-placeholder": "Ex: Campeões da Liga",
+    "input-label": "Nome do Time",
+    "button-create": "Criar Time",
+    "button-cancel": "Cancelar",
+    "empty-state": {
+      "title": "Nenhum time criado ainda",
+      "description": "Crie times para organizar seus Pokémon favoritos e facilitar o acesso a eles."
+    }
+  },
+
+  "help": {
+    "title": "Em Breve!",
+    "description": "Esta página ainda não foi criada.",
+    "subtitle": "Mas fique ligado!"
+  },
+
+  "pokemon-card": {
+    "button-time": "Adicionar ao time",
+    "dialog-title": "Adicionar ao Time",
+    "dialog-description": "Selecione um time para adicionar {name}",
+    "team-already-added": "Já está neste time",
+    "team-complete": "Time completo"
+  },
+
   "command": {
     "search": {
       "empty": "Nenhum resultado encontrado.",
