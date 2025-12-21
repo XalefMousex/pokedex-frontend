@@ -1,0 +1,5 @@
+import type * as SheetPrimitive from '@radix-ui/react-dialog';
+
+import { type ComponentProps } from 'react';
+
+export type SheetProps = {} & ComponentProps<typeof SheetPrimitive.Root>;

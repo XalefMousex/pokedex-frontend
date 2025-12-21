@@ -1,0 +1,112 @@
+{
+  "login": {
+    "title": "Pokedex",
+    "description": "Explore the Pokémon universe",
+    "card": {
+      "buttons": {
+        "sign-in": "Sign In",
+        "sign-up": "Sign Up"
+      },
+      "inputs": {
+        "name": "Name",
+        "email": "Email",
+        "password": "Password"
+      },
+      "buttons-submit": {
+        "sign-in": "Sign In",
+        "sign-up": "Create Account"
+      }
+    }
+  },
+
+  "command": {
+    "search": {
+      "empty": "No results found.",
+      "placeholder": "Type a command or search..."
+    }
+  },
+
+  "theme": {
+    "title": "Theme",
+    "options": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    }
+  },
+
+  "sidebar": {
+    "title": "Pokedex",
+    "description": "Your personal Pokedex",
+    "general": {
+      "title": "General",
+      "items": {
+        "explore": "Explore",
+        "favorites": "Favorites",
+        "teams": "Teams",
+        "history": "History"
+      }
+    },
+    "other": {
+      "title": "Other",
+      "items": {
+        "help": "Help Center"
+      }
+    }
+  },
+
+  "locales": {
+    "en-US": {
+      "name": "English"
+    },
+    "pt-BR": {
+      "name": "Portuguese"
+    }
+  },
+  "pokemon": {
+    "type": {
+      "ice": "Ice",
+      "bug": "Bug",
+      "fire": "Fire",
+      "rock": "Rock",
+      "dark": "Dark",
+      "water": "Water",
+      "grass": "Grass",
+      "ghost": "Ghost",
+      "steel": "Steel",
+      "fairy": "Fairy",
+      "normal": "Normal",
+      "poison": "Poison",
+      "ground": "Ground",
+      "flying": "Flying",
+      "dragon": "Dragon",
+      "psychic": "Psychic",
+      "electric": "Electric",
+      "fighting": "Fighting"
+    }
+  },
+  "layout": {
+    "title": "Pokedex",
+    "description": "A Pokedex with TypeScript, React, Next.js, and Tailwind CSS",
+    "application-name": "Pokedex",
+    "icons": {
+      "shortcut": ["/images/icon-512.png"],
+      "apple": [{ "url": "/images/icon-512.png" }]
+    },
+    "apple-web-app": {
+      "title": "Pokedex"
+    },
+    "open-graph": {
+      "site-name": "Pokedex",
+      "title": {
+        "default": "Pokedex",
+        "template": "%s | Pokedex"
+      },
+      "description": "A Pokedex with TypeScript, React, Next.js, and Tailwind CSS"
+    },
+    "title-template": {
+      "default": "Pokedex",
+      "template": "%s | Pokedex"
+    }
+  }
+}

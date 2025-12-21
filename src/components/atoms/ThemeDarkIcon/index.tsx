@@ -1,0 +1,87 @@
+import { type ThemeDarkIconProps } from './types';
+
+export const ThemeDarkIcon = ({ ...props }: ThemeDarkIconProps) => (
+  <svg
+    viewBox="0 0 79.86 51.14"
+    data-name="icon-theme-dark"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <g className="fill-background-950">
+      <rect y={0.5} x={0.53} rx={3.5} ry={3.5} width={78.83} height={50.14} />
+      <path d="M75.86 1c1.65 0 3 1.35 3 3v43.14c0 1.65-1.35 3-3 3H4.03c-1.65 0-3-1.35-3-3V4c0-1.65 1.35-3 3-3h71.83m0-1H4.03c-2.21 0-4 1.79-4 4v43.14c0 2.21 1.79 4 4 4h71.83c2.21 0 4-1.79 4-4V4c0-2.21-1.79-4-4-4z" />
+    </g>
+
+    <path
+      className="fill-background-950"
+      d="M22.88 0h52.97c2.21 0 4 1.79 4 4v43.14c0 2.21-1.79 4-4 4H22.88V0z"
+    />
+
+    <circle cx={6.7} r={3.54} cy={7.04} className="fill-neutral-400" />
+
+    <path
+      className="fill-neutral-400"
+      d="M18.12 6.39h-5.87c-.6 0-1.09-.45-1.09-1s.49-1 1.09-1h5.87c.6 0 1.09.45 1.09 1s-.49 1-1.09 1zM16.55 9.77h-4.24c-.55 0-1-.45-1-1s.45-1 1-1h4.24c.55 0 1 .45 1 1s-.45 1-1 1zM18.32 17.37H4.59c-.69 0-1.25-.47-1.25-1.05s.56-1.05 1.25-1.05h13.73c.69 0 1.25.47 1.25 1.05s-.56 1.05-1.25 1.05zM15.34 21.26h-11c-.55 0-1-.41-1-.91s.45-.91 1-.91h11c.55 0 1 .41 1 .91s-.45.91-1 .91zM16.46 25.57H4.43c-.6 0-1.09-.44-1.09-.98s.49-.98 1.09-.98h12.03c.6 0 1.09.44 1.09.98s-.49.98-1.09.98z"
+    />
+
+    <g className="fill-neutral-400">
+      <rect
+        x={33.36}
+        y={19.73}
+        rx={0.33}
+        ry={0.33}
+        width={2.75}
+        height={3.42}
+        opacity={0.32}
+      />
+      <rect
+        x={29.64}
+        y={16.57}
+        rx={0.33}
+        ry={0.33}
+        width={2.75}
+        height={6.58}
+        opacity={0.44}
+      />
+      <rect
+        x={37.16}
+        y={14.44}
+        rx={0.33}
+        ry={0.33}
+        width={2.75}
+        height={8.7}
+        opacity={0.53}
+      />
+      <rect
+        x={41.19}
+        y={10.75}
+        rx={0.33}
+        ry={0.33}
+        width={2.75}
+        height={12.4}
+        opacity={0.53}
+      />
+    </g>
+    <circle
+      r={8}
+      cx={62.74}
+      cy={16.32}
+      opacity={0.5}
+      className="fill-shark-950"
+    />
+    <path
+      opacity={0.74}
+      className="fill-neutral-400"
+      d="M62.74 16.32l4.1-6.87c1.19.71 2.18 1.72 2.86 2.92s1.04 2.57 1.04 3.95h-8z"
+    />
+    <rect
+      x={29.64}
+      y={27.75}
+      rx={1.69}
+      ry={1.69}
+      width={41.62}
+      height={18.62}
+      className="fill-shark-950"
+    />
+  </svg>
+);

@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "ES5",
+    "lib": ["dom", "dom.iterable", "esnext", "webworker"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "types": [
+      "jest",
+      "node",
+      "@serwist/next/typings",
+      "@testing-library/jest-dom",
+    ],
+    "plugins": [
+      {
+        "name": "next",
+      },
+    ],
+  },
+  "exclude": [
+    "cypress",
+    "**/**.mdx",
+    "node_modules",
+    "public/sw.js",
+    "cypress.config.ts",
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "auth.d.ts",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+  ],
+  "paths": {
+    "@root/*": ["./"],
+  },
+}

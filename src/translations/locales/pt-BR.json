@@ -1,0 +1,112 @@
+{
+  "login": {
+    "title": "Pokédex",
+    "description": "Explore o universo Pokémon",
+    "card": {
+      "buttons": {
+        "sign-in": "Entrar",
+        "sign-up": "Registrar"
+      },
+      "inputs": {
+        "name": "Nome",
+        "email": "Email",
+        "password": "Senha"
+      },
+      "buttons-submit": {
+        "sign-in": "Entrar",
+        "sign-up": "Criar Conta"
+      }
+    }
+  },
+
+  "command": {
+    "search": {
+      "empty": "Nenhum resultado encontrado.",
+      "placeholder": "Digite um comando ou pesquisa..."
+    }
+  },
+
+  "theme": {
+    "title": "Tema",
+    "options": {
+      "light": "Claro",
+      "dark": "Escuro",
+      "system": "Sistema"
+    }
+  },
+
+  "sidebar": {
+    "title": "Pokédex",
+    "description": "Sua Pokédex pessoal",
+    "general": {
+      "title": "Geral",
+      "items": {
+        "explore": "Explorar",
+        "favorites": "Favoritos",
+        "teams": "Times",
+        "history": "Histórico"
+      }
+    },
+    "other": {
+      "title": "Outros",
+      "items": {
+        "help": "Central de Ajuda"
+      }
+    }
+  },
+
+  "locales": {
+    "en-US": {
+      "name": "Inglês"
+    },
+    "pt-BR": {
+      "name": "Português"
+    }
+  },
+  "pokemon": {
+    "type": {
+      "normal": "Normal",
+      "fire": "Fogo",
+      "water": "Água",
+      "electric": "Elétrico",
+      "grass": "Planta",
+      "ice": "Gelo",
+      "fighting": "Lutador",
+      "poison": "Veneno",
+      "ground": "Terra",
+      "flying": "Voador",
+      "psychic": "Psíquico",
+      "bug": "Inseto",
+      "rock": "Pedra",
+      "ghost": "Fantasma",
+      "dark": "Sombrio",
+      "dragon": "Dragão",
+      "steel": "Aço",
+      "fairy": "Fada"
+    }
+  },
+  "layout": {
+    "title": "Pokedex",
+    "description": "Uma Pokedex moderna com TypeScript, React, Next.js e Tailwind CSS",
+    "application-name": "Pokedex",
+    "icons": {
+      "shortcut": ["/images/icon-512.png"],
+      "apple": [{ "url": "/images/icon-512.png" }]
+    },
+    "apple-web-app": {
+      "title": "Pokedex"
+    },
+    "open-graph": {
+      "site-name": "Pokedex",
+      "title": {
+        "default": "Pokedex",
+        "template": "%s | Pokedex"
+      },
+      "description": "Uma Pokedex moderna com TypeScript, React, Next.js e Tailwind CSS"
+    },
+    "title-template": {
+      "default": "Pokedex",
+      "template": "%s | Pokedex"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4.3.0
+
+      - name: Env
+        uses: xom9ikk/dotenv@v2.3.0
+        with:
+          mode: test
+
+      - uses: pnpm/action-setup@v4.1.0
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 10.20.0
+          run_install: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v4.4.0
+        with:
+          cache: 'pnpm'
+          node-version: 22.20.0
+
+      - name: Install dependencies
+        run: pnpm i --no-frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Deadcode
+        run: pnpm deadcode
+
+      - name: Linting
+        run: pnpm lint
+
+      - name: Storybook
+        run: pnpm build-storybook

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`<LanguageSelector /> should render the LanguageSelector correctly 1`] = `
+<button
+  aria-expanded="false"
+  aria-haspopup="menu"
+  class="flex size-10 cursor-pointer items-center justify-center rounded-full outline-none before:absolute before:z-[-1] before:h-10 before:w-10 before:rounded-full before:bg-neutral-500/8 before:opacity-0 before:transition-all before:content-[''] hover:bg-neutral-500/8 hover:before:opacity-100 focus:bg-neutral-500/8 focus:before:opacity-100 data-[state="open"]:before:opacity-100 dark:text-neutral-400 dark:hover:bg-neutral-400/8 dark:focus:bg-neutral-400/8"
+  data-state="closed"
+  id="radix-«r0»"
+  style="transform: none;"
+  type="button"
+>
+  <div
+    class="relative w-[26px]"
+    style="aspect-ratio: 3/2;"
+  >
+    <img
+      alt="Current Language"
+      class="select-none"
+      data-nimg="fill"
+      decoding="async"
+      loading="lazy"
+      src="/svg/flags/en-US.svg"
+      style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; color: transparent;"
+    />
+  </div>
+</button>
+`;
