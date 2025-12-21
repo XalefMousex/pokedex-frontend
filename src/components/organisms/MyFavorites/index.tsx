@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { useState, useEffect } from 'react';
 
 import { type PokemonModel } from 'graphql/generated';
@@ -19,6 +21,8 @@ import { cn } from 'utils/tailwind/cn';
 import { type MyFavoritesProps } from './types';
 
 export const MyFavorites = ({ className, ...props }: MyFavoritesProps) => {
+  const t = useTranslations('favorites');
+
   const { loadTeams } = useTeamsStore();
   const { favorites, isLoading, loadFavorites } = useFavoritesStore();
 
@@ -92,7 +96,7 @@ export const MyFavorites = ({ className, ...props }: MyFavoritesProps) => {
                 `,
               )}
             >
-              Meus Favoritos
+              {t('title')}
             </h1>
 
             <p
@@ -106,9 +110,8 @@ export const MyFavorites = ({ className, ...props }: MyFavoritesProps) => {
             >
               {favorites.length === 0 && 'Você ainda não tem favoritos'}
 
-              {favorites.length > 0 && (
-                <>{favorites.length} Pokémon favoritos</>
-              )}
+              {favorites.length > 0 &&
+                t('subtitle', { number: favorites.length })}
             </p>
           </div>
 
@@ -129,7 +132,7 @@ export const MyFavorites = ({ className, ...props }: MyFavoritesProps) => {
               icon={<GitCompare className="size-4" />}
               isDisabled={selectedForComparison.length < 2}
             >
-              Comparar
+              {t('button')}
             </Button>
           </div>
         </motion.div>

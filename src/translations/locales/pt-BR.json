@@ -19,6 +19,19 @@
     }
   },
 
+  "explorer": {
+    "title": "Descubra todos os Pokémon",
+    "subtitle": "Explore o mundo dos Pokémon",
+    "search": "Pesquisar por nome ou número...",
+    "loading": "Carregando mais Pokémon..."
+  },
+
+  "favorites": {
+    "title": "Meus Favoritos",
+    "subtitle": "{number} Pokémon favoritos",
+    "button": "Comparar"
+  },
+
   "command": {
     "search": {
       "empty": "Nenhum resultado encontrado.",

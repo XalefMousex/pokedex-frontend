@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -22,6 +24,8 @@ import { gridPokemonsSchema } from './schema';
 import { type GridPokemonsProps, type GridPokemonsSchemaProps } from './types';
 
 export const GridPokemons = ({ className, ...props }: GridPokemonsProps) => {
+  const t = useTranslations('explorer');
+
   const { register } = useForm<GridPokemonsSchemaProps>({
     defaultValues: {
       search: '',
@@ -109,7 +113,7 @@ export const GridPokemons = ({ className, ...props }: GridPokemonsProps) => {
                 `,
               )}
             >
-              Descubra todos os Pokémon
+              {t('title')}
             </h1>
             <p
               className={cn(
@@ -120,7 +124,7 @@ export const GridPokemons = ({ className, ...props }: GridPokemonsProps) => {
                 `,
               )}
             >
-              Explore todas as gerações
+              {t('subtitle')}
             </p>
           </div>
         </motion.div>
@@ -130,7 +134,7 @@ export const GridPokemons = ({ className, ...props }: GridPokemonsProps) => {
         <Input
           {...register('search')}
           className="p-2"
-          placeholder="Pesquise por nome ou número"
+          placeholder={t('search')}
         />
       </div>
 
@@ -163,9 +167,7 @@ export const GridPokemons = ({ className, ...props }: GridPokemonsProps) => {
       <div className="h-10" ref={loadMoreRef} />
 
       {isFetchingNextPage && (
-        <p className="mb-10 text-center text-neutral-500">
-          Carregando mais Pokémon...
-        </p>
+        <p className="mb-10 text-center text-neutral-500">{t('loading')}</p>
       )}
     </div>
   );
